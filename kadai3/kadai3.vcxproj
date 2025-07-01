@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -142,9 +142,12 @@
     <ClCompile Include="Src\Application\Application.cpp" />
     <ClCompile Include="Src\Common\Vector2.cpp" />
     <ClCompile Include="Src\FpsControl\FpsControl.cpp" />
+    <ClCompile Include="Src\GameScene\GameScene.cpp" />
     <ClCompile Include="Src\Input\InputManager.cpp" />
     <ClCompile Include="Src\main.cpp" />
-    <ClCompile Include="Src\Scene\SceneBase.cpp" />
+    <ClCompile Include="Src\Scene\SceneBace.cpp" />
+    <ClCompile Include="Src\ScenManager\ScenManager.cpp" />
+    <ClCompile Include="Src\TitleScene\TitleScene.cpp" />
     <ClCompile Include="Src\UI\UIButton.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -152,8 +155,11 @@
     <ClInclude Include="Src\Collision\Collision.h" />
     <ClInclude Include="Src\Common\Vector2.h" />
     <ClInclude Include="Src\FpsControl\FpsControl.h" />
+    <ClInclude Include="Src\GameScene\GameScene.h" />
     <ClInclude Include="Src\Input\InputManager.h" />
     <ClInclude Include="Src\Scene\SceneBase.h" />
+    <ClInclude Include="Src\ScenManager\ScenManager.h" />
+    <ClInclude Include="Src\TitleScene\TitleScene.h" />
     <ClInclude Include="Src\UI\UIButton.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -51,8 +51,6 @@ void Application::Init(void)
 // ゲームループ
 void Application::Run(void)
 {
-	//TitleEdit editor;
-	//editor.Init();
 
 	// ゲームループ
 	while (ProcessMessage() == 0)
