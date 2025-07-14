@@ -1,6 +1,8 @@
 #include <DxLib.h>
 #include "Application.h"
 #include "../FpsControl/FpsControl.h"
+#include"../ScenManager/ScenManager.h"
+#include"../Input/InputManager.h"
 
 Application* Application::instance_ = nullptr;
 
@@ -42,6 +44,12 @@ void Application::Init(void)
 
 	// キー制御初期化
 	SetUseDirectInputFlag(true);
+	InputManager::CreateInstance();
+	InputManager::GetInstance()->Init();
+
+	//シーン管理初期化
+	ScenManager::CreateInstance();
+	ScenManager::GetInstance()->Init();
 
 	// FPS初期化
 	fps_ = new FpsControl;
@@ -65,6 +73,11 @@ void Application::Run(void)
 		// 画面を初期化
 		ClearDrawScreen();
 
+		InputManager::GetInstance()->Update();		//入力制御更新
+
+		ScenManager::GetInstance()->Update();		//シーンの更新
+		ScenManager::GetInstance()->Draw();			//シーンの描画
+
 		fps_->CalcFrameRate();	// フレームレート計算
 		fps_->DrawFrameRate();	// フレームレート描画
 
@@ -75,6 +88,11 @@ void Application::Run(void)
 // 解放
 void Application::Release(void)
 {
+	//入力制御削除
+	InputManager::GetInstance();
+	//シーンの解放・管理・削除
+	ScenManager::GetInstance()->Release();
+	ScenManager::DeleteInstance();
 	// フレームレート解放
 	delete fps_;
 

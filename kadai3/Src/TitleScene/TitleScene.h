@@ -27,5 +27,9 @@ public:
     // íœ
     void Release(void) override;
 
+    //Ÿ‚ÌƒV[ƒ“‚Ö
+    void toNextScene(void);
 
+private:
+    int handle_;
 };
